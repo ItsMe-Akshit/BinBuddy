@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-cream-50: #FFFBF0;
+  --color-cream-100: #FAF3E0;
+  --color-cream-200: #F1E6C8;
+  --color-leaf-300: #BFE3B4;
+  --color-leaf-400: #8FCB81;
+  --color-leaf-500: #5FAE5B;
+  --color-leaf-700: #2F6B3A;
+  --color-bark-400: #A47551;
+  --color-bark-600: #6F4E37;
+  --color-bark-900: #3B2A20;
+  --color-marker: #FFE58A;
+}
+
+/* Subtle organic paper-grain texture overlay */
+.paper-texture {
+  background-image: radial-gradient(rgba(111, 78, 55, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.dark .paper-texture {
+  background-image: radial-gradient(rgba(241, 230, 200, 0.03) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Custom scrollbars matching Fresh Earth palette */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF3E0;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1E1A14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8FCB81;
+  border-radius: 9999px;
+  border: 2px solid transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5FAE5B;
+}
+
+/* Marker highlight effect */
+.marker-highlight {
+  position: relative;
+  display: inline-block;
+}
+
+/* Button ripple / magnetic feel */
+.btn-magnetic {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+}
+
+.btn-magnetic:hover {
+  transform: translateY(-2px);
+}
+
+.btn-magnetic:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
